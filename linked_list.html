@@ -21,6 +21,15 @@
           this.tail = newNode;
           this.size += 1;
         }
+        traversing() {
+          let counter = 0;
+          let currentNode = this.head;
+          while (counter < this.size) {
+            console.warn(currentNode);
+            currentNode = currentNode.next;
+            counter++;
+          }
+        }
       }
 
       let list = new List(200);
@@ -29,8 +38,9 @@
       list.appendNode(500);
       list.appendNode(600);
       list.appendNode(700);
+      list.traversing();
 
-      console.warn(list);
+      //   console.warn(list);
     </script>
   </head>
   <body>

@@ -58,6 +58,21 @@
             next: nextNode,
           };
         }
+        searchNode(data) {
+          let result = undefined;
+          let lead = this.head;
+          let loop = true;
+          while (loop) {
+            lead = lead.next;
+            // console.warn(lead);
+            loop = !!lead;
+            if (loop && lead.value === data) {
+              loop = false;
+              result = lead;
+            }
+          }
+          console.warn(result);
+        }
       }
 
       let list = new List(200);
@@ -66,11 +81,12 @@
       list.appendNode(500);
       list.appendNode(600);
       list.appendNode(700);
-      //   list.traversing();
-      //   list.deleteNode(4);
-      list.insertNode(5, 4000);
+      list.traversing();
+      list.deleteNode(4);
+      //   list.insertNode(5, 4000);
+      list.searchNode(600);
 
-      console.warn(list);
+      //   console.warn(list);
     </script>
   </head>
   <body>

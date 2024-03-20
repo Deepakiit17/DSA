@@ -72,6 +72,20 @@
             console.warn(root.value);
           }
         }
+        bfsTraversing(root) {
+          let queue = [];
+          queue.push(this.root);
+          while (queue.length) {
+            let current = queue.shift();
+            if (current.left) {
+              queue.push(current.left);
+            }
+            if (current.right) {
+              queue.push(current.right);
+            }
+            console.warn(current.value);
+          }
+        }
       }
       let bst = new BSTree();
       bst.makeTree(20);
@@ -84,8 +98,9 @@
       // console.warn(bst.search(bst.root, 30));
       // bst.preOrder(bst.root)
       // bst.inOrder(bst.root)
-      bst.postOrder(bst.root);
+      // bst.postOrder(bst.root);
 
+      bst.bfsTraversing(bst.root);
       console.warn(bst.root);
 
       // console.warn(bst);
